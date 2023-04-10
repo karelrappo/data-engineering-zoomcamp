@@ -1,0 +1,65 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-parent-flow'
+###
+name: Parameterized ETL
+description: null
+version: bad4ff59d95c8273c8637b98c053c3a2
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters:
+  color: yellow
+  months:
+  - 1
+  - 2
+  - 3
+  year: 2021
+schedule: null
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-parent-flow
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 5704410e-ecd1-4622-8d1f-43364208f8ff
+  _block_document_name: anonymous-54f8c8f8-0eb7-43ae-adbd-821b4be73b50
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage: null
+path: /Users/krappo/data-engineering-zoomcamp/week2/flows
+entrypoint: parameterized_flow.py:etl_parent_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    months:
+      title: months
+      default:
+      - 1
+      - 2
+      position: 0
+      type: array
+      items:
+        type: integer
+    year:
+      title: year
+      default: 2021
+      position: 1
+      type: integer
+    color:
+      title: color
+      default: yellow
+      position: 2
+      type: string
+  required: null
+  definitions: null
